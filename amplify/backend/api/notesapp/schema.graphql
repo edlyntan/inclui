@@ -4,3 +4,43 @@ type Note @model {
   description: String
   image: String
 }
+
+type Skill @model {
+  id: ID!
+  name: String!
+}
+
+type Volunteer @model {
+  id: ID!
+  name: String!
+  age: Int!
+  gender: String!
+  skills: [Skill!]!
+  registeredIn: [Activity!]!
+  partOf: [Team!]!
+}
+
+type NGO @model {
+  id: ID!
+  name: String!
+  activities: [Activity!]!
+}
+
+type Activity @model {
+  id: ID!
+  title: String!
+  description: String
+  image: String
+  ownedBy: NGO
+  participants: [Volunteer!]!
+  teams: [Team!]!
+  date: String!
+  time: String!
+  period_days: Int!
+}
+
+type Team @model {
+  id: ID!
+  name: String!
+  members: [Volunteer!]!
+}
