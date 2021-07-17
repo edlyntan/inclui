@@ -37,67 +37,697 @@ export const onDeleteNote = /* GraphQL */ `
     }
   }
 `;
-export const onCreateSample = /* GraphQL */ `
-  subscription OnCreateSample {
-    onCreateSample {
+export const onCreateSkill = /* GraphQL */ `
+  subscription OnCreateSkill {
+    onCreateSkill {
       id
       name
-      random
       createdAt
       updatedAt
     }
   }
 `;
-export const onUpdateSample = /* GraphQL */ `
-  subscription OnUpdateSample {
-    onUpdateSample {
+export const onUpdateSkill = /* GraphQL */ `
+  subscription OnUpdateSkill {
+    onUpdateSkill {
       id
       name
-      random
       createdAt
       updatedAt
     }
   }
 `;
-export const onDeleteSample = /* GraphQL */ `
-  subscription OnDeleteSample {
-    onDeleteSample {
+export const onDeleteSkill = /* GraphQL */ `
+  subscription OnDeleteSkill {
+    onDeleteSkill {
       id
       name
-      random
       createdAt
       updatedAt
     }
   }
 `;
-export const onCreateThing = /* GraphQL */ `
-  subscription OnCreateThing {
-    onCreateThing {
+export const onCreateVolunteer = /* GraphQL */ `
+  subscription OnCreateVolunteer {
+    onCreateVolunteer {
       id
       name
-      ok
+      age
+      gender
+      skills {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      registeredIn {
+        id
+        title
+        description
+        image
+        ownedBy {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        participants {
+          id
+          name
+          age
+          gender
+          createdAt
+          updatedAt
+        }
+        teams {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        date
+        time
+        period_days
+        createdAt
+        updatedAt
+      }
+      partOf {
+        id
+        name
+        members {
+          id
+          name
+          age
+          gender
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
   }
 `;
-export const onUpdateThing = /* GraphQL */ `
-  subscription OnUpdateThing {
-    onUpdateThing {
+export const onUpdateVolunteer = /* GraphQL */ `
+  subscription OnUpdateVolunteer {
+    onUpdateVolunteer {
       id
       name
-      ok
+      age
+      gender
+      skills {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      registeredIn {
+        id
+        title
+        description
+        image
+        ownedBy {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        participants {
+          id
+          name
+          age
+          gender
+          createdAt
+          updatedAt
+        }
+        teams {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        date
+        time
+        period_days
+        createdAt
+        updatedAt
+      }
+      partOf {
+        id
+        name
+        members {
+          id
+          name
+          age
+          gender
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
   }
 `;
-export const onDeleteThing = /* GraphQL */ `
-  subscription OnDeleteThing {
-    onDeleteThing {
+export const onDeleteVolunteer = /* GraphQL */ `
+  subscription OnDeleteVolunteer {
+    onDeleteVolunteer {
       id
       name
-      ok
+      age
+      gender
+      skills {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      registeredIn {
+        id
+        title
+        description
+        image
+        ownedBy {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        participants {
+          id
+          name
+          age
+          gender
+          createdAt
+          updatedAt
+        }
+        teams {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        date
+        time
+        period_days
+        createdAt
+        updatedAt
+      }
+      partOf {
+        id
+        name
+        members {
+          id
+          name
+          age
+          gender
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateNGO = /* GraphQL */ `
+  subscription OnCreateNGO {
+    onCreateNGO {
+      id
+      name
+      activities {
+        id
+        title
+        description
+        image
+        ownedBy {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        participants {
+          id
+          name
+          age
+          gender
+          createdAt
+          updatedAt
+        }
+        teams {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        date
+        time
+        period_days
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateNGO = /* GraphQL */ `
+  subscription OnUpdateNGO {
+    onUpdateNGO {
+      id
+      name
+      activities {
+        id
+        title
+        description
+        image
+        ownedBy {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        participants {
+          id
+          name
+          age
+          gender
+          createdAt
+          updatedAt
+        }
+        teams {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        date
+        time
+        period_days
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteNGO = /* GraphQL */ `
+  subscription OnDeleteNGO {
+    onDeleteNGO {
+      id
+      name
+      activities {
+        id
+        title
+        description
+        image
+        ownedBy {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        participants {
+          id
+          name
+          age
+          gender
+          createdAt
+          updatedAt
+        }
+        teams {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        date
+        time
+        period_days
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateActivity = /* GraphQL */ `
+  subscription OnCreateActivity {
+    onCreateActivity {
+      id
+      title
+      description
+      image
+      ownedBy {
+        id
+        name
+        activities {
+          id
+          title
+          description
+          image
+          date
+          time
+          period_days
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      participants {
+        id
+        name
+        age
+        gender
+        skills {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        registeredIn {
+          id
+          title
+          description
+          image
+          date
+          time
+          period_days
+          createdAt
+          updatedAt
+        }
+        partOf {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      teams {
+        id
+        name
+        members {
+          id
+          name
+          age
+          gender
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      date
+      time
+      period_days
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateActivity = /* GraphQL */ `
+  subscription OnUpdateActivity {
+    onUpdateActivity {
+      id
+      title
+      description
+      image
+      ownedBy {
+        id
+        name
+        activities {
+          id
+          title
+          description
+          image
+          date
+          time
+          period_days
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      participants {
+        id
+        name
+        age
+        gender
+        skills {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        registeredIn {
+          id
+          title
+          description
+          image
+          date
+          time
+          period_days
+          createdAt
+          updatedAt
+        }
+        partOf {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      teams {
+        id
+        name
+        members {
+          id
+          name
+          age
+          gender
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      date
+      time
+      period_days
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteActivity = /* GraphQL */ `
+  subscription OnDeleteActivity {
+    onDeleteActivity {
+      id
+      title
+      description
+      image
+      ownedBy {
+        id
+        name
+        activities {
+          id
+          title
+          description
+          image
+          date
+          time
+          period_days
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      participants {
+        id
+        name
+        age
+        gender
+        skills {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        registeredIn {
+          id
+          title
+          description
+          image
+          date
+          time
+          period_days
+          createdAt
+          updatedAt
+        }
+        partOf {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      teams {
+        id
+        name
+        members {
+          id
+          name
+          age
+          gender
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      date
+      time
+      period_days
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateTeam = /* GraphQL */ `
+  subscription OnCreateTeam {
+    onCreateTeam {
+      id
+      name
+      members {
+        id
+        name
+        age
+        gender
+        skills {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        registeredIn {
+          id
+          title
+          description
+          image
+          date
+          time
+          period_days
+          createdAt
+          updatedAt
+        }
+        partOf {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateTeam = /* GraphQL */ `
+  subscription OnUpdateTeam {
+    onUpdateTeam {
+      id
+      name
+      members {
+        id
+        name
+        age
+        gender
+        skills {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        registeredIn {
+          id
+          title
+          description
+          image
+          date
+          time
+          period_days
+          createdAt
+          updatedAt
+        }
+        partOf {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteTeam = /* GraphQL */ `
+  subscription OnDeleteTeam {
+    onDeleteTeam {
+      id
+      name
+      members {
+        id
+        name
+        age
+        gender
+        skills {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        registeredIn {
+          id
+          title
+          description
+          image
+          date
+          time
+          period_days
+          createdAt
+          updatedAt
+        }
+        partOf {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
