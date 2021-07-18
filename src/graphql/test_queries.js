@@ -11,21 +11,8 @@
 //   }
 // `;
 
-export const getNote = /* GraphQL */ `
-  query GetNote($id: ID!) {
-    getNote(id: $id) {
-      id
-      name
-      description
-      image
-      createdAt
-      updatedAt
-    }
-  }
-`;
-
-export const listNotes = /* GraphQL */ `
-  query ListNotes(
+export const OnlyUsedForExport = /* GraphQL */ `
+  query ThisDoesNotMatter(
     $filter: ModelNoteFilterInput
     $limit: Int
     $nextToken: String
