@@ -1,67 +1,33 @@
-type Note @model {
-  id: ID!
-  name: String!
-  description: String
-  image: String
-}
-
-type Skill @model {
-  id: ID!
-  name: String!
-}
-
-type Volunteer @model {
+type User @model 
+@key (name: "byAttendance", fields: ["id", "attendanceScore"])
+@key (name: "byTeam", fields: ["id", "teamId"])
+{
   id: ID!
   name: String!
   age: Int!
   gender: String!
-  skills: [Skill!]!
-  registeredIn: [Activity!]!
-  partOf: [Team!]!
+  skills: [String]!
+  attendanceScore: Int!
+  teamId: ID!
+  team: Team! @connection
 }
 
-type NGO @model {
-  id: ID!
-  name: String!
-  activities: [Activity!]!
-}
-
-type Volunteer @model {
-  id: ID!
-  name: String!
-  age: Int!
-  gender: String!
-  skills: [Skill!]!
-  registeredIn: [Activity!]!
-  partOf: [Team!]!
-}
-
-type Activity @model {
+type Event @model {
   id: ID!
   title: String!
+  organizer: String!
   description: String
   image: String
-  ownedBy: NGO
-  participants: [Volunteer!]!
-  
-  teams: [Team!]!
   date: String!
   time: String!
-  period_days: Int!
+  teamId: [ID!]
+  userId: [ID!]
+  teams: [Team!] @connection
+  users: [User!] @connection
 }
 
 type Team @model {
   id: ID!
   name: String!
-  members: [Volunteer!]!
-}
-
-type BasicVolunteer @model {
-  id: ID!
-  name: String!
-  gender: String!
-  age: Int!
   skills: [String]
-  team: Int
-  attendanceScore: Int
 }

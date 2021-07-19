@@ -1,119 +1,20 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getNote = /* GraphQL */ `
-  query GetNote($id: ID!) {
-    getNote(id: $id) {
-      id
-      name
-      description
-      image
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listNotes = /* GraphQL */ `
-  query ListNotes(
-    $filter: ModelNoteFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listNotes(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        name
-        description
-        image
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getSkill = /* GraphQL */ `
-  query GetSkill($id: ID!) {
-    getSkill(id: $id) {
-      id
-      name
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listSkills = /* GraphQL */ `
-  query ListSkills(
-    $filter: ModelSkillFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listSkills(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        name
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getVolunteer = /* GraphQL */ `
-  query GetVolunteer($id: ID!) {
-    getVolunteer(id: $id) {
+export const getUser = /* GraphQL */ `
+  query GetUser($id: ID!) {
+    getUser(id: $id) {
       id
       name
       age
       gender
-      skills {
+      skills
+      attendanceScore
+      teamId
+      team {
         id
         name
-        createdAt
-        updatedAt
-      }
-      registeredIn {
-        id
-        title
-        description
-        image
-        ownedBy {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        participants {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
-        teams {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        date
-        time
-        period_days
-        createdAt
-        updatedAt
-      }
-      partOf {
-        id
-        name
-        members {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
+        skills
         createdAt
         updatedAt
       }
@@ -122,38 +23,25 @@ export const getVolunteer = /* GraphQL */ `
     }
   }
 `;
-export const listVolunteers = /* GraphQL */ `
-  query ListVolunteers(
-    $filter: ModelVolunteerFilterInput
+export const listUsers = /* GraphQL */ `
+  query ListUsers(
+    $filter: ModelUserFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listVolunteers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         name
         age
         gender
-        skills {
+        skills
+        attendanceScore
+        teamId
+        team {
           id
           name
-          createdAt
-          updatedAt
-        }
-        registeredIn {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        partOf {
-          id
-          name
+          skills
           createdAt
           updatedAt
         }
@@ -164,187 +52,70 @@ export const listVolunteers = /* GraphQL */ `
     }
   }
 `;
-export const getNGO = /* GraphQL */ `
-  query GetNGO($id: ID!) {
-    getNGO(id: $id) {
-      id
-      name
-      activities {
-        id
-        title
-        description
-        image
-        ownedBy {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        participants {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
-        teams {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        date
-        time
-        period_days
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listNGOS = /* GraphQL */ `
-  query ListNGOS(
-    $filter: ModelNGOFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listNGOS(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        name
-        activities {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getActivity = /* GraphQL */ `
-  query GetActivity($id: ID!) {
-    getActivity(id: $id) {
+export const getEvent = /* GraphQL */ `
+  query GetEvent($id: ID!) {
+    getEvent(id: $id) {
       id
       title
+      organizer
       description
       image
-      ownedBy {
-        id
-        name
-        activities {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
-      participants {
-        id
-        name
-        age
-        gender
-        skills {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        registeredIn {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        partOf {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
+      date
+      time
+      teamId
+      userId
       teams {
-        id
-        name
-        members {
+        items {
+          id
+          name
+          skills
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      users {
+        items {
           id
           name
           age
           gender
+          skills
+          attendanceScore
+          teamId
           createdAt
           updatedAt
         }
-        createdAt
-        updatedAt
+        nextToken
       }
-      date
-      time
-      period_days
       createdAt
       updatedAt
     }
   }
 `;
-export const listActivities = /* GraphQL */ `
-  query ListActivities(
-    $filter: ModelActivityFilterInput
+export const listEvents = /* GraphQL */ `
+  query ListEvents(
+    $filter: ModelEventFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listActivities(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listEvents(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         title
+        organizer
         description
         image
-        ownedBy {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        participants {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
-        teams {
-          id
-          name
-          createdAt
-          updatedAt
-        }
         date
         time
-        period_days
+        teamId
+        userId
+        teams {
+          nextToken
+        }
+        users {
+          nextToken
+        }
         createdAt
         updatedAt
       }
@@ -357,37 +128,7 @@ export const getTeam = /* GraphQL */ `
     getTeam(id: $id) {
       id
       name
-      members {
-        id
-        name
-        age
-        gender
-        skills {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        registeredIn {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        partOf {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
+      skills
       createdAt
       updatedAt
     }
@@ -403,51 +144,7 @@ export const listTeams = /* GraphQL */ `
       items {
         id
         name
-        members {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getBasicVolunteer = /* GraphQL */ `
-  query GetBasicVolunteer($id: ID!) {
-    getBasicVolunteer(id: $id) {
-      id
-      name
-      gender
-      age
-      skills
-      team
-      attendanceScore
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listBasicVolunteers = /* GraphQL */ `
-  query ListBasicVolunteers(
-    $filter: ModelBasicVolunteerFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listBasicVolunteers(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        name
-        gender
-        age
         skills
-        team
-        attendanceScore
         createdAt
         updatedAt
       }

@@ -1,127 +1,20 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateNote = /* GraphQL */ `
-  subscription OnCreateNote {
-    onCreateNote {
-      id
-      name
-      description
-      image
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateNote = /* GraphQL */ `
-  subscription OnUpdateNote {
-    onUpdateNote {
-      id
-      name
-      description
-      image
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteNote = /* GraphQL */ `
-  subscription OnDeleteNote {
-    onDeleteNote {
-      id
-      name
-      description
-      image
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreateSkill = /* GraphQL */ `
-  subscription OnCreateSkill {
-    onCreateSkill {
-      id
-      name
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateSkill = /* GraphQL */ `
-  subscription OnUpdateSkill {
-    onUpdateSkill {
-      id
-      name
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteSkill = /* GraphQL */ `
-  subscription OnDeleteSkill {
-    onDeleteSkill {
-      id
-      name
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreateVolunteer = /* GraphQL */ `
-  subscription OnCreateVolunteer {
-    onCreateVolunteer {
+export const onCreateUser = /* GraphQL */ `
+  subscription OnCreateUser {
+    onCreateUser {
       id
       name
       age
       gender
-      skills {
+      skills
+      attendanceScore
+      teamId
+      team {
         id
         name
-        createdAt
-        updatedAt
-      }
-      registeredIn {
-        id
-        title
-        description
-        image
-        ownedBy {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        participants {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
-        teams {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        date
-        time
-        period_days
-        createdAt
-        updatedAt
-      }
-      partOf {
-        id
-        name
-        members {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
+        skills
         createdAt
         updatedAt
       }
@@ -130,61 +23,20 @@ export const onCreateVolunteer = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateVolunteer = /* GraphQL */ `
-  subscription OnUpdateVolunteer {
-    onUpdateVolunteer {
+export const onUpdateUser = /* GraphQL */ `
+  subscription OnUpdateUser {
+    onUpdateUser {
       id
       name
       age
       gender
-      skills {
+      skills
+      attendanceScore
+      teamId
+      team {
         id
         name
-        createdAt
-        updatedAt
-      }
-      registeredIn {
-        id
-        title
-        description
-        image
-        ownedBy {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        participants {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
-        teams {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        date
-        time
-        period_days
-        createdAt
-        updatedAt
-      }
-      partOf {
-        id
-        name
-        members {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
+        skills
         createdAt
         updatedAt
       }
@@ -193,61 +45,20 @@ export const onUpdateVolunteer = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteVolunteer = /* GraphQL */ `
-  subscription OnDeleteVolunteer {
-    onDeleteVolunteer {
+export const onDeleteUser = /* GraphQL */ `
+  subscription OnDeleteUser {
+    onDeleteUser {
       id
       name
       age
       gender
-      skills {
+      skills
+      attendanceScore
+      teamId
+      team {
         id
         name
-        createdAt
-        updatedAt
-      }
-      registeredIn {
-        id
-        title
-        description
-        image
-        ownedBy {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        participants {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
-        teams {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        date
-        time
-        period_days
-        createdAt
-        updatedAt
-      }
-      partOf {
-        id
-        name
-        members {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
+        skills
         createdAt
         updatedAt
       }
@@ -256,355 +67,124 @@ export const onDeleteVolunteer = /* GraphQL */ `
     }
   }
 `;
-export const onCreateNGO = /* GraphQL */ `
-  subscription OnCreateNGO {
-    onCreateNGO {
-      id
-      name
-      activities {
-        id
-        title
-        description
-        image
-        ownedBy {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        participants {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
-        teams {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        date
-        time
-        period_days
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateNGO = /* GraphQL */ `
-  subscription OnUpdateNGO {
-    onUpdateNGO {
-      id
-      name
-      activities {
-        id
-        title
-        description
-        image
-        ownedBy {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        participants {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
-        teams {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        date
-        time
-        period_days
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteNGO = /* GraphQL */ `
-  subscription OnDeleteNGO {
-    onDeleteNGO {
-      id
-      name
-      activities {
-        id
-        title
-        description
-        image
-        ownedBy {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        participants {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
-        teams {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        date
-        time
-        period_days
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreateActivity = /* GraphQL */ `
-  subscription OnCreateActivity {
-    onCreateActivity {
+export const onCreateEvent = /* GraphQL */ `
+  subscription OnCreateEvent {
+    onCreateEvent {
       id
       title
+      organizer
       description
       image
-      ownedBy {
-        id
-        name
-        activities {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
-      participants {
-        id
-        name
-        age
-        gender
-        skills {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        registeredIn {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        partOf {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
+      date
+      time
+      teamId
+      userId
       teams {
-        id
-        name
-        members {
+        items {
+          id
+          name
+          skills
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      users {
+        items {
           id
           name
           age
           gender
+          skills
+          attendanceScore
+          teamId
           createdAt
           updatedAt
         }
-        createdAt
-        updatedAt
+        nextToken
       }
-      date
-      time
-      period_days
       createdAt
       updatedAt
     }
   }
 `;
-export const onUpdateActivity = /* GraphQL */ `
-  subscription OnUpdateActivity {
-    onUpdateActivity {
+export const onUpdateEvent = /* GraphQL */ `
+  subscription OnUpdateEvent {
+    onUpdateEvent {
       id
       title
+      organizer
       description
       image
-      ownedBy {
-        id
-        name
-        activities {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
-      participants {
-        id
-        name
-        age
-        gender
-        skills {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        registeredIn {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        partOf {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
+      date
+      time
+      teamId
+      userId
       teams {
-        id
-        name
-        members {
+        items {
+          id
+          name
+          skills
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      users {
+        items {
           id
           name
           age
           gender
+          skills
+          attendanceScore
+          teamId
           createdAt
           updatedAt
         }
-        createdAt
-        updatedAt
+        nextToken
       }
-      date
-      time
-      period_days
       createdAt
       updatedAt
     }
   }
 `;
-export const onDeleteActivity = /* GraphQL */ `
-  subscription OnDeleteActivity {
-    onDeleteActivity {
+export const onDeleteEvent = /* GraphQL */ `
+  subscription OnDeleteEvent {
+    onDeleteEvent {
       id
       title
+      organizer
       description
       image
-      ownedBy {
-        id
-        name
-        activities {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
-      participants {
-        id
-        name
-        age
-        gender
-        skills {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        registeredIn {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        partOf {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
+      date
+      time
+      teamId
+      userId
       teams {
-        id
-        name
-        members {
+        items {
+          id
+          name
+          skills
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      users {
+        items {
           id
           name
           age
           gender
+          skills
+          attendanceScore
+          teamId
           createdAt
           updatedAt
         }
-        createdAt
-        updatedAt
+        nextToken
       }
-      date
-      time
-      period_days
       createdAt
       updatedAt
     }
@@ -615,37 +195,7 @@ export const onCreateTeam = /* GraphQL */ `
     onCreateTeam {
       id
       name
-      members {
-        id
-        name
-        age
-        gender
-        skills {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        registeredIn {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        partOf {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
+      skills
       createdAt
       updatedAt
     }
@@ -656,37 +206,7 @@ export const onUpdateTeam = /* GraphQL */ `
     onUpdateTeam {
       id
       name
-      members {
-        id
-        name
-        age
-        gender
-        skills {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        registeredIn {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        partOf {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
+      skills
       createdAt
       updatedAt
     }
@@ -697,82 +217,7 @@ export const onDeleteTeam = /* GraphQL */ `
     onDeleteTeam {
       id
       name
-      members {
-        id
-        name
-        age
-        gender
-        skills {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        registeredIn {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        partOf {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreateBasicVolunteer = /* GraphQL */ `
-  subscription OnCreateBasicVolunteer {
-    onCreateBasicVolunteer {
-      id
-      name
-      gender
-      age
       skills
-      team
-      attendanceScore
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateBasicVolunteer = /* GraphQL */ `
-  subscription OnUpdateBasicVolunteer {
-    onUpdateBasicVolunteer {
-      id
-      name
-      gender
-      age
-      skills
-      team
-      attendanceScore
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteBasicVolunteer = /* GraphQL */ `
-  subscription OnDeleteBasicVolunteer {
-    onDeleteBasicVolunteer {
-      id
-      name
-      gender
-      age
-      skills
-      team
-      attendanceScore
       createdAt
       updatedAt
     }

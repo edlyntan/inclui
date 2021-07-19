@@ -1,148 +1,23 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createNote = /* GraphQL */ `
-  mutation CreateNote(
-    $input: CreateNoteInput!
-    $condition: ModelNoteConditionInput
+export const createUser = /* GraphQL */ `
+  mutation CreateUser(
+    $input: CreateUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    createNote(input: $input, condition: $condition) {
-      id
-      name
-      description
-      image
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateNote = /* GraphQL */ `
-  mutation UpdateNote(
-    $input: UpdateNoteInput!
-    $condition: ModelNoteConditionInput
-  ) {
-    updateNote(input: $input, condition: $condition) {
-      id
-      name
-      description
-      image
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteNote = /* GraphQL */ `
-  mutation DeleteNote(
-    $input: DeleteNoteInput!
-    $condition: ModelNoteConditionInput
-  ) {
-    deleteNote(input: $input, condition: $condition) {
-      id
-      name
-      description
-      image
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createSkill = /* GraphQL */ `
-  mutation CreateSkill(
-    $input: CreateSkillInput!
-    $condition: ModelSkillConditionInput
-  ) {
-    createSkill(input: $input, condition: $condition) {
-      id
-      name
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateSkill = /* GraphQL */ `
-  mutation UpdateSkill(
-    $input: UpdateSkillInput!
-    $condition: ModelSkillConditionInput
-  ) {
-    updateSkill(input: $input, condition: $condition) {
-      id
-      name
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteSkill = /* GraphQL */ `
-  mutation DeleteSkill(
-    $input: DeleteSkillInput!
-    $condition: ModelSkillConditionInput
-  ) {
-    deleteSkill(input: $input, condition: $condition) {
-      id
-      name
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createVolunteer = /* GraphQL */ `
-  mutation CreateVolunteer(
-    $input: CreateVolunteerInput!
-    $condition: ModelVolunteerConditionInput
-  ) {
-    createVolunteer(input: $input, condition: $condition) {
+    createUser(input: $input, condition: $condition) {
       id
       name
       age
       gender
-      skills {
+      skills
+      attendanceScore
+      teamId
+      team {
         id
         name
-        createdAt
-        updatedAt
-      }
-      registeredIn {
-        id
-        title
-        description
-        image
-        ownedBy {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        participants {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
-        teams {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        date
-        time
-        period_days
-        createdAt
-        updatedAt
-      }
-      partOf {
-        id
-        name
-        members {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
+        skills
         createdAt
         updatedAt
       }
@@ -151,64 +26,23 @@ export const createVolunteer = /* GraphQL */ `
     }
   }
 `;
-export const updateVolunteer = /* GraphQL */ `
-  mutation UpdateVolunteer(
-    $input: UpdateVolunteerInput!
-    $condition: ModelVolunteerConditionInput
+export const updateUser = /* GraphQL */ `
+  mutation UpdateUser(
+    $input: UpdateUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    updateVolunteer(input: $input, condition: $condition) {
+    updateUser(input: $input, condition: $condition) {
       id
       name
       age
       gender
-      skills {
+      skills
+      attendanceScore
+      teamId
+      team {
         id
         name
-        createdAt
-        updatedAt
-      }
-      registeredIn {
-        id
-        title
-        description
-        image
-        ownedBy {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        participants {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
-        teams {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        date
-        time
-        period_days
-        createdAt
-        updatedAt
-      }
-      partOf {
-        id
-        name
-        members {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
+        skills
         createdAt
         updatedAt
       }
@@ -217,64 +51,23 @@ export const updateVolunteer = /* GraphQL */ `
     }
   }
 `;
-export const deleteVolunteer = /* GraphQL */ `
-  mutation DeleteVolunteer(
-    $input: DeleteVolunteerInput!
-    $condition: ModelVolunteerConditionInput
+export const deleteUser = /* GraphQL */ `
+  mutation DeleteUser(
+    $input: DeleteUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    deleteVolunteer(input: $input, condition: $condition) {
+    deleteUser(input: $input, condition: $condition) {
       id
       name
       age
       gender
-      skills {
+      skills
+      attendanceScore
+      teamId
+      team {
         id
         name
-        createdAt
-        updatedAt
-      }
-      registeredIn {
-        id
-        title
-        description
-        image
-        ownedBy {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        participants {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
-        teams {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        date
-        time
-        period_days
-        createdAt
-        updatedAt
-      }
-      partOf {
-        id
-        name
-        members {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
+        skills
         createdAt
         updatedAt
       }
@@ -283,373 +76,133 @@ export const deleteVolunteer = /* GraphQL */ `
     }
   }
 `;
-export const createNGO = /* GraphQL */ `
-  mutation CreateNGO(
-    $input: CreateNGOInput!
-    $condition: ModelNGOConditionInput
+export const createEvent = /* GraphQL */ `
+  mutation CreateEvent(
+    $input: CreateEventInput!
+    $condition: ModelEventConditionInput
   ) {
-    createNGO(input: $input, condition: $condition) {
-      id
-      name
-      activities {
-        id
-        title
-        description
-        image
-        ownedBy {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        participants {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
-        teams {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        date
-        time
-        period_days
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateNGO = /* GraphQL */ `
-  mutation UpdateNGO(
-    $input: UpdateNGOInput!
-    $condition: ModelNGOConditionInput
-  ) {
-    updateNGO(input: $input, condition: $condition) {
-      id
-      name
-      activities {
-        id
-        title
-        description
-        image
-        ownedBy {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        participants {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
-        teams {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        date
-        time
-        period_days
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteNGO = /* GraphQL */ `
-  mutation DeleteNGO(
-    $input: DeleteNGOInput!
-    $condition: ModelNGOConditionInput
-  ) {
-    deleteNGO(input: $input, condition: $condition) {
-      id
-      name
-      activities {
-        id
-        title
-        description
-        image
-        ownedBy {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        participants {
-          id
-          name
-          age
-          gender
-          createdAt
-          updatedAt
-        }
-        teams {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        date
-        time
-        period_days
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createActivity = /* GraphQL */ `
-  mutation CreateActivity(
-    $input: CreateActivityInput!
-    $condition: ModelActivityConditionInput
-  ) {
-    createActivity(input: $input, condition: $condition) {
+    createEvent(input: $input, condition: $condition) {
       id
       title
+      organizer
       description
       image
-      ownedBy {
-        id
-        name
-        activities {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
-      participants {
-        id
-        name
-        age
-        gender
-        skills {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        registeredIn {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        partOf {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
+      date
+      time
+      teamId
+      userId
       teams {
-        id
-        name
-        members {
+        items {
+          id
+          name
+          skills
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      users {
+        items {
           id
           name
           age
           gender
+          skills
+          attendanceScore
+          teamId
           createdAt
           updatedAt
         }
-        createdAt
-        updatedAt
+        nextToken
       }
-      date
-      time
-      period_days
       createdAt
       updatedAt
     }
   }
 `;
-export const updateActivity = /* GraphQL */ `
-  mutation UpdateActivity(
-    $input: UpdateActivityInput!
-    $condition: ModelActivityConditionInput
+export const updateEvent = /* GraphQL */ `
+  mutation UpdateEvent(
+    $input: UpdateEventInput!
+    $condition: ModelEventConditionInput
   ) {
-    updateActivity(input: $input, condition: $condition) {
+    updateEvent(input: $input, condition: $condition) {
       id
       title
+      organizer
       description
       image
-      ownedBy {
-        id
-        name
-        activities {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
-      participants {
-        id
-        name
-        age
-        gender
-        skills {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        registeredIn {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        partOf {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
+      date
+      time
+      teamId
+      userId
       teams {
-        id
-        name
-        members {
+        items {
+          id
+          name
+          skills
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      users {
+        items {
           id
           name
           age
           gender
+          skills
+          attendanceScore
+          teamId
           createdAt
           updatedAt
         }
-        createdAt
-        updatedAt
+        nextToken
       }
-      date
-      time
-      period_days
       createdAt
       updatedAt
     }
   }
 `;
-export const deleteActivity = /* GraphQL */ `
-  mutation DeleteActivity(
-    $input: DeleteActivityInput!
-    $condition: ModelActivityConditionInput
+export const deleteEvent = /* GraphQL */ `
+  mutation DeleteEvent(
+    $input: DeleteEventInput!
+    $condition: ModelEventConditionInput
   ) {
-    deleteActivity(input: $input, condition: $condition) {
+    deleteEvent(input: $input, condition: $condition) {
       id
       title
+      organizer
       description
       image
-      ownedBy {
-        id
-        name
-        activities {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
-      participants {
-        id
-        name
-        age
-        gender
-        skills {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        registeredIn {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        partOf {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
+      date
+      time
+      teamId
+      userId
       teams {
-        id
-        name
-        members {
+        items {
+          id
+          name
+          skills
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      users {
+        items {
           id
           name
           age
           gender
+          skills
+          attendanceScore
+          teamId
           createdAt
           updatedAt
         }
-        createdAt
-        updatedAt
+        nextToken
       }
-      date
-      time
-      period_days
       createdAt
       updatedAt
     }
@@ -663,37 +216,7 @@ export const createTeam = /* GraphQL */ `
     createTeam(input: $input, condition: $condition) {
       id
       name
-      members {
-        id
-        name
-        age
-        gender
-        skills {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        registeredIn {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        partOf {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
+      skills
       createdAt
       updatedAt
     }
@@ -707,37 +230,7 @@ export const updateTeam = /* GraphQL */ `
     updateTeam(input: $input, condition: $condition) {
       id
       name
-      members {
-        id
-        name
-        age
-        gender
-        skills {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        registeredIn {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        partOf {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
+      skills
       createdAt
       updatedAt
     }
@@ -751,91 +244,7 @@ export const deleteTeam = /* GraphQL */ `
     deleteTeam(input: $input, condition: $condition) {
       id
       name
-      members {
-        id
-        name
-        age
-        gender
-        skills {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        registeredIn {
-          id
-          title
-          description
-          image
-          date
-          time
-          period_days
-          createdAt
-          updatedAt
-        }
-        partOf {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createBasicVolunteer = /* GraphQL */ `
-  mutation CreateBasicVolunteer(
-    $input: CreateBasicVolunteerInput!
-    $condition: ModelBasicVolunteerConditionInput
-  ) {
-    createBasicVolunteer(input: $input, condition: $condition) {
-      id
-      name
-      gender
-      age
       skills
-      team
-      attendanceScore
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateBasicVolunteer = /* GraphQL */ `
-  mutation UpdateBasicVolunteer(
-    $input: UpdateBasicVolunteerInput!
-    $condition: ModelBasicVolunteerConditionInput
-  ) {
-    updateBasicVolunteer(input: $input, condition: $condition) {
-      id
-      name
-      gender
-      age
-      skills
-      team
-      attendanceScore
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteBasicVolunteer = /* GraphQL */ `
-  mutation DeleteBasicVolunteer(
-    $input: DeleteBasicVolunteerInput!
-    $condition: ModelBasicVolunteerConditionInput
-  ) {
-    deleteBasicVolunteer(input: $input, condition: $condition) {
-      id
-      name
-      gender
-      age
-      skills
-      team
-      attendanceScore
       createdAt
       updatedAt
     }
