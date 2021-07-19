@@ -26,6 +26,16 @@ type NGO @model {
   activities: [Activity!]!
 }
 
+type Volunteer @model {
+  id: ID!
+  name: String!
+  age: Int!
+  gender: String!
+  skills: [Skill!]!
+  registeredIn: [Activity!]!
+  partOf: [Team!]!
+}
+
 type Activity @model {
   id: ID!
   title: String!
@@ -33,6 +43,7 @@ type Activity @model {
   image: String
   ownedBy: NGO
   participants: [Volunteer!]!
+  
   teams: [Team!]!
   date: String!
   time: String!
@@ -43,4 +54,14 @@ type Team @model {
   id: ID!
   name: String!
   members: [Volunteer!]!
+}
+
+type BasicVolunteer @model {
+  id: ID!
+  name: String!
+  gender: String!
+  age: Int!
+  skills: [String]
+  team: Int
+  attendanceScore: Int
 }

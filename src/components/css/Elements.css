@@ -1,0 +1,40 @@
+.eventpost-card {
+	background-color: #ffffff;
+	border-radius: 8px;
+	display: inline-block;
+	padding: 2rem;
+	position: relative;
+	width: 70%;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.gen-flex-container {
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.sidenav {
+	left: 0;
+	position: fixed;
+	width: 20vw; /* landscape only*/
+	height: 100%;
+	display: flex;
+	background-color: grey;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: column;
+}
+
+.page {
+	right: 0;
+	position: fixed;
+	height: 100%;
+	background-color: #f3f3f3;
+	width: 80vw; /* landscape only*/
+}
+
+.page-content {
+	margin-left: 2rem;
+}

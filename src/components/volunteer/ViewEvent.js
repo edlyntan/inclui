@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { withAuthenticator } from '@aws-amplify/ui-react';
 import { Link } from 'react-router-dom';
 import { API, Storage } from 'aws-amplify';
 import { OnlyUsedForExport } from '../../graphql/test_queries';
 import { listVolunteers, addVolunteer } from '../../graphql/queries';
+import { eventID } from '../../data';
 
-const ViewTeams = () => {
+const ViewEvent = () => {
 	const [ notes, setNotes ] = useState([]);
 	const [ vols, setVols ] = useState([]);
 
@@ -18,12 +20,6 @@ const ViewTeams = () => {
 			query: OnlyUsedForExport,
 			variables: { filter: { name: { eq: 'cfvg' } } }
 		});
-		// const notesFromAPI = apiData.data.listNotes.items;
-		// await Promise.all(
-		// 	notesFromAPI.map(async (note) => {
-		// 		return note;
-		// 	})
-		// );
 		setNotes(apiData.data.listNotes.items);
 	};
 
@@ -38,15 +34,14 @@ const ViewTeams = () => {
 	console.log(vols);
 
 	return (
-		<div className="ViewTeams">
-			<Link to="/">
-				<button>Home</button>
-			</Link>
-			<h1>View Teams</h1>
-			<Link to="/teams/generate">
+		<div className="ViewTeams page">
+			<h1>Event Name</h1>
+			<Link to={`/volunteer/events/${eventID}/generate-teams`}>
 				<button>Generate Teams</button>
 			</Link>
-			<h2>Notes</h2>
+			<button>Message</button>
+			<h1>Participants</h1>
+			{/* <h2>Notes</h2>
 			<div style={{ marginBottom: 30 }}>
 				{notes.map((note) => (
 					<div key={note.id || note.name}>
@@ -63,9 +58,9 @@ const ViewTeams = () => {
 						<p>{vol.age}</p>
 					</div>
 				))}
-			</div>
+			</div> */}
 		</div>
 	);
 };
 
-export default ViewTeams;
+export default withAuthenticator(ViewEvent);

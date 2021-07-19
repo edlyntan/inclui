@@ -418,3 +418,40 @@ export const listTeams = /* GraphQL */ `
     }
   }
 `;
+export const getBasicVolunteer = /* GraphQL */ `
+  query GetBasicVolunteer($id: ID!) {
+    getBasicVolunteer(id: $id) {
+      id
+      name
+      gender
+      age
+      skills
+      team
+      attendanceScore
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listBasicVolunteers = /* GraphQL */ `
+  query ListBasicVolunteers(
+    $filter: ModelBasicVolunteerFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listBasicVolunteers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        gender
+        age
+        skills
+        team
+        attendanceScore
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;

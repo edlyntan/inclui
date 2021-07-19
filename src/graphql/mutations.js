@@ -787,3 +787,57 @@ export const deleteTeam = /* GraphQL */ `
     }
   }
 `;
+export const createBasicVolunteer = /* GraphQL */ `
+  mutation CreateBasicVolunteer(
+    $input: CreateBasicVolunteerInput!
+    $condition: ModelBasicVolunteerConditionInput
+  ) {
+    createBasicVolunteer(input: $input, condition: $condition) {
+      id
+      name
+      gender
+      age
+      skills
+      team
+      attendanceScore
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateBasicVolunteer = /* GraphQL */ `
+  mutation UpdateBasicVolunteer(
+    $input: UpdateBasicVolunteerInput!
+    $condition: ModelBasicVolunteerConditionInput
+  ) {
+    updateBasicVolunteer(input: $input, condition: $condition) {
+      id
+      name
+      gender
+      age
+      skills
+      team
+      attendanceScore
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteBasicVolunteer = /* GraphQL */ `
+  mutation DeleteBasicVolunteer(
+    $input: DeleteBasicVolunteerInput!
+    $condition: ModelBasicVolunteerConditionInput
+  ) {
+    deleteBasicVolunteer(input: $input, condition: $condition) {
+      id
+      name
+      gender
+      age
+      skills
+      team
+      attendanceScore
+      createdAt
+      updatedAt
+    }
+  }
+`;

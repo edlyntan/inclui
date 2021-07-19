@@ -733,3 +733,48 @@ export const onDeleteTeam = /* GraphQL */ `
     }
   }
 `;
+export const onCreateBasicVolunteer = /* GraphQL */ `
+  subscription OnCreateBasicVolunteer {
+    onCreateBasicVolunteer {
+      id
+      name
+      gender
+      age
+      skills
+      team
+      attendanceScore
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateBasicVolunteer = /* GraphQL */ `
+  subscription OnUpdateBasicVolunteer {
+    onUpdateBasicVolunteer {
+      id
+      name
+      gender
+      age
+      skills
+      team
+      attendanceScore
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteBasicVolunteer = /* GraphQL */ `
+  subscription OnDeleteBasicVolunteer {
+    onDeleteBasicVolunteer {
+      id
+      name
+      gender
+      age
+      skills
+      team
+      attendanceScore
+      createdAt
+      updatedAt
+    }
+  }
+`;

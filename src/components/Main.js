@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 const Home = () => {
 	return (
 		<div className="Home">
-			<h1>Home</h1>
-			<Link to="/teams">
-				<button>View Teams</button>
+			<h1>Volunteer</h1>
+			<button>Create Event</button>
+			<Link to="/upcoming">
+				<button>Upcoming Events</button>
 			</Link>
-			<Link to="/notes">
-				<button>Notes App</button>
-			</Link>
+			<button>Previous Events</button>
+			<h1>NGO Profile</h1>
 			<AmplifySignOut />
 		</div>
 	);
