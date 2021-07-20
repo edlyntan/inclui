@@ -1,18 +1,23 @@
-.eventpost-card {
-	background-color: #ffffff;
-	border-radius: 8px;
-	display: inline-block;
-	padding: 2rem;
-	position: relative;
-	width: 70%;
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+.page {
+	right: 0;
+	position: fixed;
+	height: 100%;
+	background-color: #f3f3f3;
+	width: 80vw; /* landscape only*/
 }
 
-.gen-flex-container {
-	display: flex;
-	align-items: stretch;
-	justify-content: center;
-	flex-direction: column;
+.page-title {
+	font-size: 2rem;
+	font-weight: normal;
+}
+
+.page-section-title {
+	font-size: 1.5rem;
+	font-weight: normal;
+}
+
+.page-content {
+	margin-left: 2rem;
 }
 
 .sidenav {
@@ -27,14 +32,45 @@
 	flex-direction: column;
 }
 
-.page {
-	right: 0;
-	position: fixed;
-	height: 100%;
-	background-color: #f3f3f3;
-	width: 80vw; /* landscape only*/
+.menu-button,
+.options-button {
+	background-color: #ffad33;
+	height: 10rem;
+	width: 10rem;
+	border-radius: 8px;
+	margin: 1rem;
 }
 
-.page-content {
-	margin-left: 2rem;
+.options-button {
+	height: 2.25rem;
+	width: 10rem;
+}
+
+.menu-button:hover,
+.options-button:hover,
+.form-button:hover {
+	background-color: #ffffff;
+}
+
+.button-unavailable,
+.button-unavailable:hover {
+	cursor: default;
+	background-color: grey;
+}
+
+.eventpost-card {
+	background-color: #ffffff;
+	border-radius: 1rem;
+	display: inline-block;
+	padding: 2rem;
+	position: relative;
+	width: 70%;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.gen-flex-container {
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	flex-direction: column;
 }

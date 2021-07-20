@@ -3,6 +3,11 @@ a {
 	color: inherit;
 }
 
+button {
+	cursor: pointer;
+	border: none;
+}
+
 .App {
 	text-align: center;
 }

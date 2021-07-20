@@ -1,7 +1,7 @@
 import React from 'react';
 import { withAuthenticator } from '@aws-amplify/ui-react';
-import { Link, useHistory } from 'react-router-dom';
-import { eventID } from '../../data';
+import { useHistory } from 'react-router-dom';
+import { Page, PageTitle, FormButton } from '../Elements';
 
 const GenerateTeams = () => {
 	const history = useHistory();
@@ -11,11 +11,11 @@ const GenerateTeams = () => {
 		history.go(-1);
 	};
 	return (
-		<div className="GenerateTeams page">
-			<h1>Generate Teams for Name</h1>
-			<button onClick={() => history.go(-1)}>Cancel</button>
-			<button onClick={updateThenGoBack}>Confirm</button>
-		</div>
+		<Page>
+			<PageTitle>Generate Teams for Name</PageTitle>
+			<FormButton onClick={() => history.go(-1)}>Cancel</FormButton>
+			<FormButton onClick={updateThenGoBack}>Confirm</FormButton>
+		</Page>
 	);
 };
 

@@ -1,34 +1,22 @@
 import React from 'react';
-import { withAuthenticator } from '@aws-amplify/ui-react';
 import { Link } from 'react-router-dom';
-import { eventID } from '../../data';
-import { LinkedEventPost, FlexContainer } from '../Elements';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import { eventID, lorem1P } from '../../data';
+import { Page, PageTitle, EventPost, EventTag, FlexContainer } from '../Elements';
 
 const UpcomingEvent = () => {
-	const EventPost = (props) => {
-		return (
-			<div>
-				{props.real ? (
-					<Link to={`/volunteer/events/${eventID}`}>
-						<button>View Event</button>
-					</Link>
-				) : (
-					<button>View Event</button>
-				)}
-			</div>
-		);
-	};
+	const partNumFetchedData = 1;
 	return (
-		<div className="UpcomingEvent page">
-			<h1>Upcoming Events</h1>
-			{/* <EventPost real={true} />
-			<EventPost real={false} />
-			<EventPost real={false} /> */}
+		<Page>
+			<PageTitle>Upcoming Events</PageTitle>
 			<FlexContainer>
-				<LinkedEventPost link={`/volunteer/events/${eventID}`} linked />
-				{/* <LinkedEventPost link={`/volunteer/events/${eventID}`} /> */}
+				<Link to={`/volunteer/events/${eventID}`}>
+					<EventPost title="Some Day" date="01/09/1991" desc={lorem1P} partNum={partNumFetchedData}>
+						<EventTag category="Refugees" />
+					</EventPost>
+				</Link>
 			</FlexContainer>
-		</div>
+		</Page>
 	);
 };
 

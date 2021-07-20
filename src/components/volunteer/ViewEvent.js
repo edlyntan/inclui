@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { withAuthenticator } from '@aws-amplify/ui-react';
 import { Link } from 'react-router-dom';
-import { API, Storage } from 'aws-amplify';
+import { API } from 'aws-amplify';
 import { OnlyUsedForExport } from '../../graphql/test_queries';
-import { listVolunteers, addVolunteer } from '../../graphql/queries';
+import { listUsers } from '../../graphql/queries';
 import { eventID } from '../../data';
+import { Page, PageTitle, SectionTitle, OptionsButton } from '../Elements';
 
 const ViewEvent = () => {
 	const [ notes, setNotes ] = useState([]);
@@ -25,22 +26,22 @@ const ViewEvent = () => {
 
 	const fetchVolByName = async () => {
 		const apiData = await API.graphql({
-			query: listVolunteers
+			query: listUsers
 		});
-		setVols(apiData.data.listVolunteers.items);
+		setVols(apiData.data.listUsers.items);
 	};
 
 	console.log(notes);
 	console.log(vols);
 
 	return (
-		<div className="ViewTeams page">
-			<h1>Event Name</h1>
+		<Page>
+			<PageTitle>Event Name</PageTitle>
 			<Link to={`/volunteer/events/${eventID}/generate-teams`}>
-				<button>Generate Teams</button>
+				<OptionsButton>Generate Teams</OptionsButton>
 			</Link>
-			<button>Message</button>
-			<h1>Participants</h1>
+			<OptionsButton className="button-unavailable">Message</OptionsButton>
+			<SectionTitle>Participants</SectionTitle>
 			{/* <h2>Notes</h2>
 			<div style={{ marginBottom: 30 }}>
 				{notes.map((note) => (
@@ -59,7 +60,7 @@ const ViewEvent = () => {
 					</div>
 				))}
 			</div> */}
-		</div>
+		</Page>
 	);
 };
 

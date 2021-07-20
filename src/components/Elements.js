@@ -3,6 +3,22 @@ import { Link } from 'react-router-dom';
 import { AmplifySignOut } from '@aws-amplify/ui-react';
 import './css/Elements.css';
 
+const Page = (props) => {
+	return (
+		<div className="page">
+			<div className="page-content">{props.children}</div>
+		</div>
+	);
+};
+
+const PageTitle = (props) => {
+	return <h1 className="page-title">{props.children}</h1>;
+};
+
+const SectionTitle = (props) => {
+	return <h2 className="page-section-title">{props.children}</h2>;
+};
+
 const SideNav = () => {
 	return (
 		<div className="sidenav">
@@ -20,46 +36,61 @@ const SideNav = () => {
 	);
 };
 
-const FormButton = () => {
-	return <div />;
-};
-
-const MenuButton = (props) => {
+const FormButton = (props) => {
 	return (
-		<button className="menu-button" type="button" onClick={props.onClick}>
+		<button type={props.type || 'button'} className={`form-button ${props.className}`} onClick={props.onClick}>
 			{props.children}
 		</button>
 	);
 };
 
-const OptionsButton = () => {};
-
-const EventPost = (props) => {
+const MenuButton = (props) => {
 	return (
-		<div className={props.className}>
-			<div className="eventpost-image">Image</div>
-			<p className="eventpost-title">Event Title</p>
-			<p className="eventpost-date">Date</p>
-			<div className="gen-margin-container">
-				<p className="eventpost-short-desc">Short Description</p>
-				<p className="eventpost-num-participants">Number of Participants</p>
-			</div>
-			<p className="eventpost-tags">Tags</p>
-		</div>
+		<button type="button" className={`menu-button ${props.className}`} onClick={props.onClick}>
+			{props.children}
+		</button>
 	);
 };
 
-const LinkedEventPost = (props) => {
+const OptionsButton = (props) => {
 	return (
-		<React.Fragment>
-			{props.linked ? (
-				<Link className="eventpost-card" to={props.link}>
-					<EventPost />
-				</Link>
-			) : (
-				<EventPost className="eventpost-card" />
-			)}
-		</React.Fragment>
+		<button type="button" className={`options-button ${props.className}`} onClick={props.onClick}>
+			{props.children}
+		</button>
+	);
+};
+
+const EventTag = (props) => {
+	let tagCatClass;
+	switch (props.category) {
+		case 'Refugees':
+			tagCatClass = 'dark-purple';
+			break;
+		case 'Women':
+			tagCatClass = 'purple';
+			break;
+		default:
+			console.error('Error: props.tagCat out of bounds');
+	}
+	return <div className={`event-tag ${tagCatClass}`}>{props.category}</div>;
+};
+
+const EventPost = (props) => {
+	return (
+		<div className="eventpost-card">
+			<div className="eventpost-image-container">
+				{props.img && <img src={props.imgSrc} alt={`Event photo for ${props.title}`} />}
+			</div>
+			<div className="eventpost-text-container">
+				<p className="eventpost-title">{props.title}</p>
+				<p className="eventpost-date">{props.date}</p>
+				<div className="gen-margin-container">
+					<p className="eventpost-short-desc">{props.desc}</p>
+					<p className="eventpost-participant-num">{props.partNum}</p>
+				</div>
+				<div className="eventpost-tag-container">{props.children}</div>
+			</div>
+		</div>
 	);
 };
 
@@ -67,4 +98,15 @@ const FlexContainer = (props) => {
 	return <div className="gen-flex-container">{props.children}</div>;
 };
 
-export { LinkedEventPost, FlexContainer, SideNav };
+export {
+	Page,
+	PageTitle,
+	SectionTitle,
+	SideNav,
+	FormButton,
+	MenuButton,
+	OptionsButton,
+	EventTag,
+	EventPost,
+	FlexContainer
+};
