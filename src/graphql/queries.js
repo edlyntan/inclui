@@ -10,13 +10,29 @@ export const getUser = /* GraphQL */ `
       gender
       skills
       attendanceScore
-      teamId
-      team {
-        id
-        name
-        skills
-        createdAt
-        updatedAt
+      teams {
+        items {
+          id
+          userId
+          teamId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      events {
+        items {
+          id
+          title
+          organizer
+          description
+          image
+          date
+          time
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
@@ -37,6 +53,87 @@ export const listUsers = /* GraphQL */ `
         gender
         skills
         attendanceScore
+        teams {
+          nextToken
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getUserTeam = /* GraphQL */ `
+  query GetUserTeam($id: ID!) {
+    getUserTeam(id: $id) {
+      id
+      userId
+      user {
+        id
+        name
+        age
+        gender
+        skills
+        attendanceScore
+        teams {
+          nextToken
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      teamId
+      team {
+        id
+        name
+        skills
+        event {
+          id
+          title
+          organizer
+          description
+          image
+          date
+          time
+          createdAt
+          updatedAt
+        }
+        users {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listUserTeams = /* GraphQL */ `
+  query ListUserTeams(
+    $filter: ModelUserTeamFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listUserTeams(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        userId
+        user {
+          id
+          name
+          age
+          gender
+          skills
+          attendanceScore
+          createdAt
+          updatedAt
+        }
         teamId
         team {
           id
@@ -62,8 +159,6 @@ export const getEvent = /* GraphQL */ `
       image
       date
       time
-      teamId
-      userId
       teams {
         items {
           id
@@ -74,7 +169,7 @@ export const getEvent = /* GraphQL */ `
         }
         nextToken
       }
-      users {
+      volunteers {
         items {
           id
           name
@@ -82,7 +177,6 @@ export const getEvent = /* GraphQL */ `
           gender
           skills
           attendanceScore
-          teamId
           createdAt
           updatedAt
         }
@@ -108,12 +202,10 @@ export const listEvents = /* GraphQL */ `
         image
         date
         time
-        teamId
-        userId
         teams {
           nextToken
         }
-        users {
+        volunteers {
           nextToken
         }
         createdAt
@@ -129,6 +221,33 @@ export const getTeam = /* GraphQL */ `
       id
       name
       skills
+      event {
+        id
+        title
+        organizer
+        description
+        image
+        date
+        time
+        teams {
+          nextToken
+        }
+        volunteers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      users {
+        items {
+          id
+          userId
+          teamId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -145,6 +264,20 @@ export const listTeams = /* GraphQL */ `
         id
         name
         skills
+        event {
+          id
+          title
+          organizer
+          description
+          image
+          date
+          time
+          createdAt
+          updatedAt
+        }
+        users {
+          nextToken
+        }
         createdAt
         updatedAt
       }

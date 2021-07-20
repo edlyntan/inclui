@@ -13,13 +13,29 @@ export const createUser = /* GraphQL */ `
       gender
       skills
       attendanceScore
-      teamId
-      team {
-        id
-        name
-        skills
-        createdAt
-        updatedAt
+      teams {
+        items {
+          id
+          userId
+          teamId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      events {
+        items {
+          id
+          title
+          organizer
+          description
+          image
+          date
+          time
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
@@ -38,13 +54,29 @@ export const updateUser = /* GraphQL */ `
       gender
       skills
       attendanceScore
-      teamId
-      team {
-        id
-        name
-        skills
-        createdAt
-        updatedAt
+      teams {
+        items {
+          id
+          userId
+          teamId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      events {
+        items {
+          id
+          title
+          organizer
+          description
+          image
+          date
+          time
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
@@ -63,11 +95,180 @@ export const deleteUser = /* GraphQL */ `
       gender
       skills
       attendanceScore
+      teams {
+        items {
+          id
+          userId
+          teamId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      events {
+        items {
+          id
+          title
+          organizer
+          description
+          image
+          date
+          time
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createUserTeam = /* GraphQL */ `
+  mutation CreateUserTeam(
+    $input: CreateUserTeamInput!
+    $condition: ModelUserTeamConditionInput
+  ) {
+    createUserTeam(input: $input, condition: $condition) {
+      id
+      userId
+      user {
+        id
+        name
+        age
+        gender
+        skills
+        attendanceScore
+        teams {
+          nextToken
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       teamId
       team {
         id
         name
         skills
+        event {
+          id
+          title
+          organizer
+          description
+          image
+          date
+          time
+          createdAt
+          updatedAt
+        }
+        users {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateUserTeam = /* GraphQL */ `
+  mutation UpdateUserTeam(
+    $input: UpdateUserTeamInput!
+    $condition: ModelUserTeamConditionInput
+  ) {
+    updateUserTeam(input: $input, condition: $condition) {
+      id
+      userId
+      user {
+        id
+        name
+        age
+        gender
+        skills
+        attendanceScore
+        teams {
+          nextToken
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      teamId
+      team {
+        id
+        name
+        skills
+        event {
+          id
+          title
+          organizer
+          description
+          image
+          date
+          time
+          createdAt
+          updatedAt
+        }
+        users {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteUserTeam = /* GraphQL */ `
+  mutation DeleteUserTeam(
+    $input: DeleteUserTeamInput!
+    $condition: ModelUserTeamConditionInput
+  ) {
+    deleteUserTeam(input: $input, condition: $condition) {
+      id
+      userId
+      user {
+        id
+        name
+        age
+        gender
+        skills
+        attendanceScore
+        teams {
+          nextToken
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      teamId
+      team {
+        id
+        name
+        skills
+        event {
+          id
+          title
+          organizer
+          description
+          image
+          date
+          time
+          createdAt
+          updatedAt
+        }
+        users {
+          nextToken
+        }
         createdAt
         updatedAt
       }
@@ -89,8 +290,6 @@ export const createEvent = /* GraphQL */ `
       image
       date
       time
-      teamId
-      userId
       teams {
         items {
           id
@@ -101,7 +300,7 @@ export const createEvent = /* GraphQL */ `
         }
         nextToken
       }
-      users {
+      volunteers {
         items {
           id
           name
@@ -109,7 +308,6 @@ export const createEvent = /* GraphQL */ `
           gender
           skills
           attendanceScore
-          teamId
           createdAt
           updatedAt
         }
@@ -133,8 +331,6 @@ export const updateEvent = /* GraphQL */ `
       image
       date
       time
-      teamId
-      userId
       teams {
         items {
           id
@@ -145,7 +341,7 @@ export const updateEvent = /* GraphQL */ `
         }
         nextToken
       }
-      users {
+      volunteers {
         items {
           id
           name
@@ -153,7 +349,6 @@ export const updateEvent = /* GraphQL */ `
           gender
           skills
           attendanceScore
-          teamId
           createdAt
           updatedAt
         }
@@ -177,8 +372,6 @@ export const deleteEvent = /* GraphQL */ `
       image
       date
       time
-      teamId
-      userId
       teams {
         items {
           id
@@ -189,7 +382,7 @@ export const deleteEvent = /* GraphQL */ `
         }
         nextToken
       }
-      users {
+      volunteers {
         items {
           id
           name
@@ -197,7 +390,6 @@ export const deleteEvent = /* GraphQL */ `
           gender
           skills
           attendanceScore
-          teamId
           createdAt
           updatedAt
         }
@@ -217,6 +409,33 @@ export const createTeam = /* GraphQL */ `
       id
       name
       skills
+      event {
+        id
+        title
+        organizer
+        description
+        image
+        date
+        time
+        teams {
+          nextToken
+        }
+        volunteers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      users {
+        items {
+          id
+          userId
+          teamId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -231,6 +450,33 @@ export const updateTeam = /* GraphQL */ `
       id
       name
       skills
+      event {
+        id
+        title
+        organizer
+        description
+        image
+        date
+        time
+        teams {
+          nextToken
+        }
+        volunteers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      users {
+        items {
+          id
+          userId
+          teamId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -245,6 +491,33 @@ export const deleteTeam = /* GraphQL */ `
       id
       name
       skills
+      event {
+        id
+        title
+        organizer
+        description
+        image
+        date
+        time
+        teams {
+          nextToken
+        }
+        volunteers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      users {
+        items {
+          id
+          userId
+          teamId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }

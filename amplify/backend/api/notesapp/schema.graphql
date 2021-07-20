@@ -1,33 +1,43 @@
 type User @model 
 @key (name: "byAttendance", fields: ["id", "attendanceScore"])
-@key (name: "byTeam", fields: ["id", "teamId"])
 {
   id: ID!
   name: String!
   age: Int!
   gender: String!
-  skills: [String]!
+  skills: [String]
   attendanceScore: Int!
+  teams: [UserTeam] @connection(keyName: "byUser", fields: ["id"])
+  events: [Event] @connection
+}
+
+type UserTeam @model
+@key(name: "byTeam", fields:["userId", "teamId"])
+@key(name: "byUser", fields:["teamId", "userId"])
+  {
+  id: ID!
+  userId: ID!
+  user: User @connection(fields:["userId"])
   teamId: ID!
-  team: Team! @connection
+  team: Team @connection(fields:["teamId"])
 }
 
 type Event @model {
   id: ID!
   title: String!
   organizer: String!
-  description: String
+  description: String!
   image: String
   date: String!
   time: String!
-  teamId: [ID!]
-  userId: [ID!]
-  teams: [Team!] @connection
-  users: [User!] @connection
+  teams: [Team] @connection
+  volunteers: [User] @connection
 }
 
 type Team @model {
   id: ID!
   name: String!
   skills: [String]
+  event: Event @connection
+  users: [UserTeam] @connection(keyName: "byTeam", fields: ["id"])
 }
