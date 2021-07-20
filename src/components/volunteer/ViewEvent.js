@@ -11,10 +11,11 @@ const ViewEvent = () => {
 	const [ notes, setNotes ] = useState([]);
 	const [ vols, setVols ] = useState([]);
 
+	/*
 	useEffect(() => {
 		fetchSpecificNote();
 		fetchVolByName();
-	}, []);
+	}, []); */
 
 	const fetchSpecificNote = async () => {
 		const apiData = await API.graphql({
