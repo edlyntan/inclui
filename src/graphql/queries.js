@@ -285,3 +285,38 @@ export const listTeams = /* GraphQL */ `
     }
   }
 `;
+export const usersByAttendance = /* GraphQL */ `
+  query UsersByAttendance(
+    $attendanceScore: Int
+    $sortDirection: ModelSortDirection
+    $filter: ModelUserFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    usersByAttendance(
+      attendanceScore: $attendanceScore
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        name
+        age
+        gender
+        skills
+        attendanceScore
+        teams {
+          nextToken
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;

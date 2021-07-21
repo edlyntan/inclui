@@ -11,7 +11,7 @@ import './App.css';
 import Amplify, { API, graphqlOperation, input} from 'aws-amplify';
 import {createUser, createTeam, createUserTeam, createEvent} from "./graphql/mutations";
 import { updateUser, updateTeam, updateUserTeam, updateEvent } from './graphql/mutations';
-import { listUsers, listTeams, listUserTeams, listEvents } from './graphql/queries';
+import { listUsers, listTeams, listUserTeams, listEvents, usersByAttendance } from './graphql/queries';
 import { getUser,  getTeam, getUserTeam, getEvent} from './graphql/queries';
 import awsconfig from "./aws-exports";
 Amplify.configure(awsconfig);
@@ -59,10 +59,11 @@ const events = [
 ];
 
 
-async function fetchUsers(){
+(async function fetchUsers(){
 	let retrieved = [];	
-	retrieved = await API.graphql(graphqlOperation(listUsers));
-	await API.graphql(graphqlOperation(updateUser, 
+	//retrieved = await API.graphql(graphqlOperation(listUsers, {filter: {gender: { eq: "Female"}}}, {limit: 5})); //testing filter
+	retrieved = await API.graphql(graphqlOperation(usersByAttendance, {sortDirection: 'DESC'}, {filter: {gender: { eq: "Female"}}}));
+	/*await API.graphql(graphqlOperation(updateUser, 
 		{
 			input:
 			{
@@ -70,14 +71,15 @@ async function fetchUsers(){
 				gender: "Female"
 			}
 		}
-	));
+	));*/
 
 	console.log(
-		retrieved.data.listUsers.items[0].id, 
+		retrieved.data.listUsers.items.length,
+		retrieved.data.listUsers.items[0].name, 
 		retrieved.data.listUsers.items[0].gender);
-}
+})();
 
-/* temporary. remove comments, and duplicate entries get inserted
+/* temporary. remove comments, and duplicate entries get inserted 
 (async function (){
 	for (var i=0; i<events.length; i++){
 		await API.graphql(graphqlOperation(createEvent, {input:events[i]}));

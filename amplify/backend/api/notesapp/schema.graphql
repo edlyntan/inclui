@@ -1,5 +1,5 @@
 type User @model 
-@key (name: "byAttendance", fields: ["id", "attendanceScore"])
+@key (name: "usersByAttendance", fields: ["attendanceScore"], queryField: "usersByAttendance")
 {
   id: ID!
   name: String!
