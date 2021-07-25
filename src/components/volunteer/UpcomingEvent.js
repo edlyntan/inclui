@@ -26,6 +26,7 @@ const UpcomingEvent = () => {
 							return (
 								<Link to={`/volunteer/events/${event.id}`}>
 									<EventPost
+										key={event.id}
 										title={event.title}
 										date={event.date}
 										time={event.time}

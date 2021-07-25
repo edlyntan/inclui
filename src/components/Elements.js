@@ -77,7 +77,7 @@ const EventTag = (props) => {
 
 const EventPost = (props) => {
 	return (
-		<div className="eventpost-card">
+		<div className="eventpost-card" key={props.id}>
 			<div className="eventpost-image-container">
 				{props.img && <img src={props.imgSrc} alt={`Event photo for ${props.title}`} />}
 			</div>

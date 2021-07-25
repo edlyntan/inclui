@@ -11,3 +11,4 @@ const Main = () => {
 };
 
 export default withAuthenticator(Main);
+

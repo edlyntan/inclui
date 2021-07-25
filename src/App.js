@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { withRouter } from 'react-router';
 import { Route, Switch } from 'react-router-dom';
 import { SideNav } from './components/Elements';
@@ -8,6 +8,7 @@ import UpcomingEvent from './components/volunteer/UpcomingEvent';
 import ViewEvent from './components/volunteer/ViewEvent';
 import GenerateTeams from './components/volunteer/GenerateTeams';
 // import { users, events } from './data';
+import { setDefaultTeam, fetchUserTeams } from './api/api';
 import './App.css';
 
 import Amplify, { API, graphqlOperation, input } from 'aws-amplify';
@@ -44,6 +45,13 @@ async function fetchUsers() {
 const excludedPathArray = [ '/login' ];
 
 const App = ({ location }) => {
+
+	useEffect(async () => {
+		// setDefaultTeam();
+		const haha = await fetchUserTeams();
+		console.log(haha[12].user.name, haha[12].team.name);
+	}, []);
+
 	return (
 		<div>
 			<SideNav />
