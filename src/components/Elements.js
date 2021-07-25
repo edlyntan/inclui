@@ -84,6 +84,7 @@ const EventPost = (props) => {
 			<div className="eventpost-text-container">
 				<p className="eventpost-title">{props.title}</p>
 				<p className="eventpost-date">{props.date}</p>
+				<p className="eventpost-time">{props.time}</p>
 				<div className="gen-margin-container">
 					<p className="eventpost-short-desc">{props.desc}</p>
 					<p className="eventpost-participant-num">{props.partNum}</p>
