@@ -79,7 +79,7 @@ const EventPost = (props) => {
 	return (
 		<div className="eventpost-card" key={props.id}>
 			<div className="eventpost-image-container">
-				{props.img && <img src={props.imgSrc} alt={`Event photo for ${props.title}`} />}
+				{props.img && <img src={props.imgSrc} alt={props.alt || ''} />}
 			</div>
 			<div className="eventpost-text-container">
 				<p className="eventpost-title">{props.title}</p>
