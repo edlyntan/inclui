@@ -1,43 +1,41 @@
-type User @model 
-@key (name: "usersByAttendance", fields: ["attendanceScore"], queryField: "usersByAttendance")
-{
-  id: ID!
-  name: String!
-  age: Int!
-  gender: String!
-  skills: [String]
-  attendanceScore: Int!
-  teams: [UserTeam] @connection(keyName: "byUser", fields: ["id"])
-  events: [Event] @connection
+type User @model @key(name: "usersByAttendance", fields: ["attendanceScore"], queryField: "usersByAttendance") {
+	id: ID!
+	name: String!
+	age: Int!
+	gender: String!
+	skills: [String]
+	attendanceScore: Int!
+	teams: [UserTeam] @connection(keyName: "byUser", fields: ["id"])
+	events: [Event] @connection
 }
 
-type UserTeam @model
-@key(name: "byTeam", fields:["userId", "teamId"])
-@key(name: "byUser", fields:["teamId", "userId"])
-  {
-  id: ID!
-  userId: ID!
-  user: User @connection(fields:["userId"])
-  teamId: ID!
-  team: Team @connection(fields:["teamId"])
+type UserTeam
+	@model
+	@key(name: "byTeam", fields: ["userId", "teamId"])
+	@key(name: "byUser", fields: ["teamId", "userId"]) {
+	id: ID!
+	userId: ID!
+	user: User @connection(fields: ["userId"])
+	teamId: ID!
+	team: Team @connection(fields: ["teamId"])
 }
 
 type Event @model {
-  id: ID!
-  title: String!
-  organizer: String!
-  description: String!
-  image: String
-  date: String!
-  time: String!
-  teams: [Team] @connection
-  volunteers: [User] @connection
+	id: ID!
+	title: String!
+	organizer: String!
+	description: String!
+	image: String
+	date: String!
+	time: String!
+	teams: [Team] @connection
+	volunteers: [User] @connection
 }
 
 type Team @model {
-  id: ID!
-  name: String!
-  skills: [String]
-  event: Event @connection
-  users: [UserTeam] @connection(keyName: "byTeam", fields: ["id"])
+	id: ID!
+	name: String!
+	skills: [String]
+	event: Event @connection
+	users: [UserTeam] @connection(keyName: "byTeam", fields: ["id"])
 }

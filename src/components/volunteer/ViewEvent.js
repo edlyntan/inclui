@@ -19,6 +19,10 @@ const ViewEvent = () => {
 			<OptionsButton className="button-unavailable">Message</OptionsButton>
 			<SectionTitle>Participants</SectionTitle>
 			<div>
+				<p>Total Participants: x</p>
+				<p>Expected Turnout: y</p>
+			</div>
+			<div>
 				{userTeams &&
 					userTeams.map((userTeams) => {
 						return (

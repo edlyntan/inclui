@@ -43,7 +43,7 @@ const App = () => {
 		(async () => {
 			// setDefaultTeam();
 			const haha = await fetchUserTeams();
-			console.log(haha[12].user.name, haha[12].team.name);
+			console.log(haha[12].user.name, JSON.stringify(haha[12].user.skills), haha[12].team.name);
 		})();
 	}, []);
 
