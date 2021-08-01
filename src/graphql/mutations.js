@@ -152,7 +152,6 @@ export const createUserTeam = /* GraphQL */ `
       team {
         id
         name
-        skills
         event {
           id
           title
@@ -203,7 +202,6 @@ export const updateUserTeam = /* GraphQL */ `
       team {
         id
         name
-        skills
         event {
           id
           title
@@ -254,7 +252,6 @@ export const deleteUserTeam = /* GraphQL */ `
       team {
         id
         name
-        skills
         event {
           id
           title
@@ -294,7 +291,6 @@ export const createEvent = /* GraphQL */ `
         items {
           id
           name
-          skills
           createdAt
           updatedAt
         }
@@ -335,7 +331,6 @@ export const updateEvent = /* GraphQL */ `
         items {
           id
           name
-          skills
           createdAt
           updatedAt
         }
@@ -376,7 +371,6 @@ export const deleteEvent = /* GraphQL */ `
         items {
           id
           name
-          skills
           createdAt
           updatedAt
         }
@@ -408,7 +402,6 @@ export const createTeam = /* GraphQL */ `
     createTeam(input: $input, condition: $condition) {
       id
       name
-      skills
       event {
         id
         title
@@ -449,7 +442,6 @@ export const updateTeam = /* GraphQL */ `
     updateTeam(input: $input, condition: $condition) {
       id
       name
-      skills
       event {
         id
         title
@@ -490,7 +482,6 @@ export const deleteTeam = /* GraphQL */ `
     deleteTeam(input: $input, condition: $condition) {
       id
       name
-      skills
       event {
         id
         title

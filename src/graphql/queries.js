@@ -91,7 +91,6 @@ export const getUserTeam = /* GraphQL */ `
       team {
         id
         name
-        skills
         event {
           id
           title
@@ -138,7 +137,6 @@ export const listUserTeams = /* GraphQL */ `
         team {
           id
           name
-          skills
           createdAt
           updatedAt
         }
@@ -163,7 +161,6 @@ export const getEvent = /* GraphQL */ `
         items {
           id
           name
-          skills
           createdAt
           updatedAt
         }
@@ -220,7 +217,6 @@ export const getTeam = /* GraphQL */ `
     getTeam(id: $id) {
       id
       name
-      skills
       event {
         id
         title
@@ -263,7 +259,6 @@ export const listTeams = /* GraphQL */ `
       items {
         id
         name
-        skills
         event {
           id
           title

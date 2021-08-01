@@ -140,7 +140,6 @@ export const onCreateUserTeam = /* GraphQL */ `
       team {
         id
         name
-        skills
         event {
           id
           title
@@ -188,7 +187,6 @@ export const onUpdateUserTeam = /* GraphQL */ `
       team {
         id
         name
-        skills
         event {
           id
           title
@@ -236,7 +234,6 @@ export const onDeleteUserTeam = /* GraphQL */ `
       team {
         id
         name
-        skills
         event {
           id
           title
@@ -273,7 +270,6 @@ export const onCreateEvent = /* GraphQL */ `
         items {
           id
           name
-          skills
           createdAt
           updatedAt
         }
@@ -311,7 +307,6 @@ export const onUpdateEvent = /* GraphQL */ `
         items {
           id
           name
-          skills
           createdAt
           updatedAt
         }
@@ -349,7 +344,6 @@ export const onDeleteEvent = /* GraphQL */ `
         items {
           id
           name
-          skills
           createdAt
           updatedAt
         }
@@ -378,7 +372,6 @@ export const onCreateTeam = /* GraphQL */ `
     onCreateTeam {
       id
       name
-      skills
       event {
         id
         title
@@ -416,7 +409,6 @@ export const onUpdateTeam = /* GraphQL */ `
     onUpdateTeam {
       id
       name
-      skills
       event {
         id
         title
@@ -454,7 +446,6 @@ export const onDeleteTeam = /* GraphQL */ `
     onDeleteTeam {
       id
       name
-      skills
       event {
         id
         title

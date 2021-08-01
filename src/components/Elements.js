@@ -99,6 +99,15 @@ const FlexContainer = (props) => {
 	return <div className="gen-flex-container">{props.children}</div>;
 };
 
+const FormInput = (props) => {
+	return (
+		<div>
+			<label for={props.item}>{props.item.charAt(0).toUpperCase() + props.item.substring(1)}</label>
+			<input id={props.item} name={props.item} type={props.type || props.item} onChange={props.onChange} />
+		</div>
+	);
+};
+
 export {
 	Page,
 	PageTitle,
@@ -109,5 +118,6 @@ export {
 	OptionsButton,
 	EventTag,
 	EventPost,
-	FlexContainer
+	FlexContainer,
+	FormInput
 };

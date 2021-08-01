@@ -142,7 +142,7 @@ const GenerateTeams = () => {
 		doEverything();
 		console.log('done');
 		history.go(-1);
-		history.go(0);
+		// history.go(0);
 	};
 
 	useEffect(

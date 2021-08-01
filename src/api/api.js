@@ -43,10 +43,10 @@ export const setDefaultTeam = async (teamId) => {
 	});
 };
 
-export const addTeam = async (teamName, teamSkills) => {
+export const addTeam = async (teamName) => {
 	const returned = await API.graphql({
 		query: createTeam,
-		variables: { input: { name: teamName, skills: teamSkills } }
+		variables: { input: { name: teamName } }
 	});
 	return returned.data.createTeam.id;
 	// console.log('AAAAAA', returned, returned.data.createTeam.id);

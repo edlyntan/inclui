@@ -8,7 +8,9 @@ const Home = () => {
 		<Page>
 			<PageTitle>Volunteer</PageTitle>
 			<div>
-				<MenuButton className="button-unavailable">Create Event</MenuButton>
+				<Link to="/volunteer/create">
+					<MenuButton>Create Event</MenuButton>
+				</Link>
 				<div>
 					<Link to="/volunteer/upcoming">
 						<MenuButton>Upcoming Events</MenuButton>

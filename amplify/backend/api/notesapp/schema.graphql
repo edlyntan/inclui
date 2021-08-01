@@ -35,7 +35,6 @@ type Event @model {
 type Team @model {
 	id: ID!
 	name: String!
-	skills: [String]
 	event: Event @connection
 	users: [UserTeam] @connection(keyName: "byTeam", fields: ["id"])
 }
