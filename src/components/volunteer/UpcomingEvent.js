@@ -25,6 +25,7 @@ const UpcomingEvent = () => {
 									<EventPost
 										key={event.id}
 										title={event.title}
+										image={event.image}
 										date={event.date}
 										time={event.time}
 										desc={event.description}

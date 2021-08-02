@@ -79,7 +79,7 @@ const EventPost = (props) => {
 	return (
 		<div className="eventpost-card" key={props.id}>
 			<div className="eventpost-image-container">
-				{props.img && <img src={props.imgSrc} alt={props.alt || ''} />}
+				{props.image && <img src={props.image} alt={props.alt || ''} className="imgHuh" />}
 			</div>
 			<div className="eventpost-text-container">
 				<p className="eventpost-title">{props.title}</p>
@@ -102,8 +102,17 @@ const FlexContainer = (props) => {
 const FormInput = (props) => {
 	return (
 		<div>
-			<label for={props.item}>{props.item.charAt(0).toUpperCase() + props.item.substring(1)}</label>
+			<label htmlFor={props.item}>{props.item.charAt(0).toUpperCase() + props.item.substring(1)}</label>
 			<input id={props.item} name={props.item} type={props.type || props.item} onChange={props.onChange} />
+		</div>
+	);
+};
+
+const FormTextArea = (props) => {
+	return (
+		<div>
+			<label htmlFor={props.item}>{props.item.charAt(0).toUpperCase() + props.item.substring(1)}</label>
+			<textarea id={props.item} name={props.item} onChange={props.onChange} />
 		</div>
 	);
 };
@@ -119,5 +128,6 @@ export {
 	EventTag,
 	EventPost,
 	FlexContainer,
-	FormInput
+	FormInput,
+	FormTextArea
 };

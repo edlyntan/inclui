@@ -136,15 +136,6 @@ const GenerateTeams = () => {
 		console.log(userTeams);
 	};
 
-	const updateThenGoBack = () => {
-		// update through api
-		console.log('doEverything');
-		doEverything();
-		console.log('done');
-		history.go(-1);
-		// history.go(0);
-	};
-
 	useEffect(
 		() => {
 			if (('teamsInfo', teamsInfo[0])) console.log(teamsInfo, teamsInfo[0].skills);
@@ -192,7 +183,14 @@ const GenerateTeams = () => {
 					);
 				})}
 			<FormButton onClick={() => history.go(-1)}>Cancel</FormButton>
-			<FormButton onClick={updateThenGoBack}>Confirm</FormButton>
+			<FormButton
+				onClick={() => {
+					doEverything();
+					history.go(-1);
+				}}
+			>
+				Confirm
+			</FormButton>
 		</Page>
 	);
 };

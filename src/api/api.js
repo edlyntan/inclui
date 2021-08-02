@@ -1,7 +1,7 @@
 import { API, Storage } from 'aws-amplify';
 import { createUserTeam } from '../graphql/mutations';
 import { listEvents, listUsers, listUserTeams } from '../graphql/queries';
-import { createTeam, updateUserTeam } from '../graphql/mutations';
+import { createTeam, updateUserTeam, createEvent } from '../graphql/mutations';
 
 // const defaultTeamID = '90737396-f2dc-4100-892c-9877a0b2b7f6';
 
@@ -58,4 +58,28 @@ export const updateTeam = async (userTeamId, teamID) => {
 		variables: { input: { id: userTeamId, teamId: teamID } }
 	});
 	return returned.data.updateUserTeam;
+};
+
+export const addEvent = async (formData) => {
+	if (!formData.title || !formData.image || !formData.description) {
+		console.log('NG');
+		return;
+	}
+	await API.graphql({
+		query: createEvent,
+		variables: {
+			input: {
+				title: formData.title,
+				image: formData.image,
+				organizer: "Milena Women's Society",
+				description: formData.description,
+				date: formData.date,
+				time: formData.startTime + '-' + formData.endTime
+			}
+		}
+	});
+	if (formData.image) {
+		const image = await Storage.get(formData.image);
+		formData.image = image;
+	}
 };
