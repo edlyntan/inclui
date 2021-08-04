@@ -40,13 +40,13 @@ Amplify.configure(awsconfig);
 // }
 
 const App = () => {
-	useEffect(() => {
-		(async () => {
-			// setDefaultTeam();
-			const haha = await fetchUserTeams();
-			// console.log(haha[12].user.name, JSON.stringify(haha[12].user.skills), haha[12].team.name);
-		})();
-	}, []);
+	// useEffect(() => {
+	// 	(async () => {
+	// 		// setDefaultTeam();
+	// 		const haha = await fetchUserTeams();
+	// 		// console.log(haha[12].user.name, JSON.stringify(haha[12].user.skills), haha[12].team.name);
+	// 	})();
+	// }, []);
 
 	return (
 		<div>

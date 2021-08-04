@@ -1,6 +1,6 @@
 import { API, Storage } from 'aws-amplify';
 import { createUserTeam } from '../graphql/mutations';
-import { listEvents, listUsers, listUserTeams } from '../graphql/queries';
+import { listEvents, listUsers, listUserTeams, getEvent } from '../graphql/queries';
 import { createTeam, updateUserTeam, createEvent } from '../graphql/mutations';
 
 // const defaultTeamID = '90737396-f2dc-4100-892c-9877a0b2b7f6';
@@ -82,4 +82,14 @@ export const addEvent = async (formData) => {
 		const image = await Storage.get(formData.image);
 		formData.image = image;
 	}
+};
+
+export const fetchEvent = async (eventId) => {
+	const returned = await API.graphql({ query: getEvent, variables: { id: eventId } });
+	const event = returned.data.getEvent;
+	if (event.image) {
+		const getImage = await Storage.get(event.image);
+		event.image = getImage;
+	}
+	return event;
 };

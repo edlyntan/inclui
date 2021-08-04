@@ -11,8 +11,6 @@ const UpcomingEvent = () => {
 
 	console.log(events);
 
-	const partNumFetchedData = 1;
-
 	return (
 		<div>
 			{events && (
@@ -29,7 +27,6 @@ const UpcomingEvent = () => {
 										date={event.date}
 										time={event.time}
 										desc={event.description}
-										partNum={partNumFetchedData}
 									>
 										<EventTag category="Refugees" />
 									</EventPost>

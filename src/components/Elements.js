@@ -78,16 +78,17 @@ const EventTag = (props) => {
 const EventPost = (props) => {
 	return (
 		<div className="eventpost-card" key={props.id}>
-			<div className="eventpost-image-container">
-				{props.image && <img src={props.image} alt={props.alt || ''} className="imgHuh" />}
-			</div>
+			{props.image && (
+				<div className="eventpost-image-container">
+					<img src={props.image} alt={props.alt || ''} />
+				</div>
+			)}
 			<div className="eventpost-text-container">
 				<p className="eventpost-title">{props.title}</p>
 				<p className="eventpost-date">{props.date}</p>
 				<p className="eventpost-time">{props.time}</p>
 				<div className="gen-margin-container">
 					<p className="eventpost-short-desc">{props.desc}</p>
-					<p className="eventpost-participant-num">{props.partNum}</p>
 				</div>
 				<div className="eventpost-tag-container">{props.children}</div>
 			</div>

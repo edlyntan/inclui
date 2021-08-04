@@ -1,9 +1,23 @@
+.sidenav {
+	left: 0;
+	position: fixed;
+	width: 20vw;
+	height: 100%;
+	display: flex;
+	background-color: grey;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: column;
+}
+
 .page {
 	right: 0;
 	position: fixed;
+	overflow: scroll;
+	overflow-x: hidden;
 	height: 100%;
-	background-color: #f3f3f3;
-	width: 80vw; /* landscape only*/
+	background-color: pink;
+	width: 80vw;
 }
 
 .page-title {
@@ -18,18 +32,6 @@
 
 .page-content {
 	margin-left: 2rem;
-}
-
-.sidenav {
-	left: 0;
-	position: fixed;
-	width: 20vw; /* landscape only*/
-	height: 100%;
-	display: flex;
-	background-color: grey;
-	justify-content: space-evenly;
-	align-items: center;
-	flex-direction: column;
 }
 
 .menu-button,
@@ -61,10 +63,11 @@
 .eventpost-card {
 	background-color: #ffffff;
 	border-radius: 1rem;
-	display: inline-block;
+	display: flex;
 	padding: 2rem;
-	position: relative;
 	width: 70%;
+	margin: 1rem;
+	margin-bottom: 2rem;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
@@ -75,6 +78,18 @@
 	flex-direction: column;
 }
 
-.imgHuh {
-	height: 100px;
+.eventpost-image-container {
+	width: 30%;
+	/* border: 2px solid purple; */
+	margin-right: 2rem;
+}
+
+.eventpost-image-container img {
+	width: 100%;
+}
+
+.eventpost-text-container {
+	/* border: 2px solid red; */
+	margin-top: -1rem;
+	width: 70%;
 }
