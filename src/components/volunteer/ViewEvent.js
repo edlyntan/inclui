@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { eventID } from '../../data';
 import { Page, PageTitle, SectionTitle, OptionsButton } from '../Elements';
 import { fetchUserTeams, fetchEvent } from '../../api/api';
+import '../css/Elements.css';
 
 const ViewEvent = () => {
 	let location = useLocation();
@@ -18,12 +19,9 @@ const ViewEvent = () => {
 		(async () => setEvent(await fetchEvent(currEventId)))();
 	}, []);
 
-	useEffect(
-		() => {
-			console.log(userTeams);
-		},
-		[ event ]
-	);
+	userTeams.sort(function(a, b) {
+		return a.team.name - b.team.name;
+	});
 
 	return (
 		<Page>
@@ -46,22 +44,45 @@ const ViewEvent = () => {
 			) : (
 				<button onClick={() => setShowDesc(!showDesc)}>Show Description</button>
 			)}
+			<br />
 			<Link to={`/volunteer/events/${eventID}/generate-teams`}>
 				<OptionsButton>Generate Teams</OptionsButton>
 			</Link>
 			<OptionsButton className="button-unavailable">Message</OptionsButton>
-			<SectionTitle>Participants</SectionTitle>
+			<SectionTitle>
+				<h3> Participants </h3>
+			</SectionTitle>
 			<div>
 				<p>Total Participants: {userTeams.length}</p>
-				<p>Expected Turnout: y</p>
+				<p>Expected Turnout: 12-13</p>
+			</div>
+			<div key="a" className="userTeamTableHeader">
+				<b>
+					<p>Name </p>
+				</b>
+				<b>
+					<p>Team </p>
+				</b>
+				<b>
+					<p>Age </p>
+				</b>
+				<b>
+					<p>Skills</p>
+				</b>
+				<b>
+					<p>Attendance score</p>{' '}
+				</b>
 			</div>
 			<div>
 				{userTeams &&
 					userTeams.map((userTeams) => {
 						return (
-							<div key={userTeams.user.id}>
-								{userTeams.user.name} {userTeams.user.age} {userTeams.user.skills}{' '}
-								{userTeams.user.attendanceScore} {userTeams.team.name}{' '}
+							<div key={userTeams.user.id} className="userTeamTable">
+								<p>{userTeams.user.name}</p>
+								<p>{userTeams.team.name}</p>
+								<p>{userTeams.user.age}</p>
+								<p>{userTeams.user.skills}</p>
+								<p>{userTeams.user.attendanceScore}</p>
 							</div>
 						);
 					})}

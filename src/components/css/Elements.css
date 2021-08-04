@@ -16,7 +16,7 @@
 	overflow: scroll;
 	overflow-x: hidden;
 	height: 100%;
-	background-color: pink;
+	background-color: #ffffff;
 	width: 80vw;
 }
 
@@ -92,4 +92,32 @@
 	/* border: 2px solid red; */
 	margin-top: -1rem;
 	width: 70%;
+}
+
+.form-input {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-input label textarea {
+	margin: 1rem 0 1rem 0;
+	width: 50vw;
+}
+
+.userTeamTable {
+	margin: 0 1rem 0 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.userTeamTableHeader {
+	margin: 0 1rem 0 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.userTeamTable p {
+	width: 50px;
 }

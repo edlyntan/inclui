@@ -149,9 +149,10 @@ const GenerateTeams = () => {
 			{teamsInfo.length > 0 &&
 				teamsInfo.map((teamInfo) => {
 					return (
-						<div key={teamInfo.name}>
+						<div key={teamInfo.name} style={{ display: 'flex' }}>
 							<div>{teamInfo.name}</div>
 							<div>
+								<p>Number of People</p>
 								<input
 									type="text"
 									name={teamInfo.name}
@@ -160,6 +161,7 @@ const GenerateTeams = () => {
 								/>
 							</div>
 							<div>
+								<p>Preferred Skills</p>
 								<select
 									name={teamInfo.name}
 									value={teamInfo.skills || []}
